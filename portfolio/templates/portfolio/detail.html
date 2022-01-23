@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">{{ detail.title }}</h2>
+    <img src="{{ detail.image.url }}" alt="{{ detail.title }}"  class="my-2"/>
+    <p>{{ detail.description }}</p>
+    {% if detail.url %}
+    <a href="{{ detail.url }}" class="my-2">Перейти на сайт</a>
+    {% endif %}
+    <br/>
+    <a href="{% url 'project:project' %}" class="btn btn-info my-5">Вернуться</a>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container"></div>
+    <h2 class="text-center">My Projects</h2>
+    <div class="d-flex justify-content-around row">
+    {% for project in projects %}
+        <div class="card col-auto mx-2" style="width: 18rem;">
+            <a href="{% url 'project:project_detail' project.pk %}"><img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}"></a>
+            <div class="card-body">
+            <h5 class="card-title">{{ project.title }}</h5>
+            <p class="card-text">{{ project.description|truncatechars:100 }}</p>
+            {% if project.url %}
+            <a href="{{ project.url }}" class="btn btn-primary">Go ...</a>
+            {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
