@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container mt-5">
-    <h2 class="text-center">{{ detail.title }}</h2>
+    <h2 class="text-center">№ {{ detail.pk }} - {{ detail.title }}</h2>
     <p>{{ detail.description }}</p>
     <p class="text-end">{{ detail.date|date:'Y d M' }}</p>
     <a href="{% url 'blog:blog' %}" class="btn btn-info my-5">Вернуться</a>
